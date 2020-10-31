@@ -1,0 +1,19 @@
+<h3>My Contacts</h3>
+<ul class="contacts">
+  <li *ngFor="let contact of contacts"
+      [class.selected]="contact === selectedContact"
+      (click)="onSelect(contact)">
+    <span class="item">{{contact.id}}</span> {{contact.name}}
+  </li>
+</ul>
+<div *ngIf="selectedContact">
+  <h3>Some details about <b style="color: blue">{{selectedContact.name | uppercase}}</b></h3>
+  <div><span><b>Id: </b></span>{{selectedContact.id}}</div>
+  <div>
+    <label><b>Name:</b>
+      <input [(ngModel)]="selectedContact.name"/>
+    </label>
+  </div>
+  <div><span><b>Description: </b>{{selectedContact.description}}</span></div>
+  <div><span><b>Source: </b> <a href="https://en.wikipedia.org/">Wikipedia</a></span></div>
+</div>
