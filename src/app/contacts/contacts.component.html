@@ -8,10 +8,12 @@
 </ul>
 <div *ngIf="selectedContact">
   <h3>Some details about <b style="color: blue">{{selectedContact.name | uppercase}}</b></h3>
-  <div><span>id: </span>{{selectedContact.id}}</div>
+  <div><span><b>Id: </b></span>{{selectedContact.id}}</div>
   <div>
-    <label>name:
+    <label><b>Name:</b>
       <input [(ngModel)]="selectedContact.name"/>
     </label>
   </div>
+  <div><span><b>Description: </b>{{selectedContact.description}}</span></div>
+  <div><span><b>Source: </b> <a href="https://en.wikipedia.org/">Wikipedia</a></span></div>
 </div>
